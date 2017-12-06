@@ -35,4 +35,23 @@ const group = new Group({
     
     // Register the text field for real time sync
     group.shareHtmlElement(textField);
+
+    /**
+     * Section 2:
+     * Create a text field whose value will be stored in the database and on update applied.
+     */
+    const dbTextField = document.querySelector('#cloudless-dbsync');
+    const apply = document.querySelector('#cloudless-dbsync-apply');
+
+    // Store revision of the lastest db entry
+    let rev = null;
+    
+    // Add a click listener to write into the database on "Save"
+    apply.onclick = () => {
+        group.database.put({
+            _id: 'shared_text_value',
+            _rev: rev,
+            value: dbTextField.value
+        })
+    };
 })();
