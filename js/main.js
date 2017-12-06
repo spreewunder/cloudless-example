@@ -46,6 +46,14 @@ const group = new Group({
     // Store revision of the lastest db entry
     let rev = null;
     
+    // Create a changes listener for incoming database changes
+    group.database.changes({ live: true, include_docs: true }).on('change', (e) => {
+        // Read change, apply value in DOM element
+        dbTextField.value = e.doc.value;
+        // Store the updated revision
+        rev = e.doc._rev;
+    });
+    
     // Add a click listener to write into the database on "Save"
     apply.onclick = () => {
         group.database.put({
