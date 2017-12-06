@@ -62,4 +62,19 @@ const group = new Group({
             value: dbTextField.value
         })
     };
+    
+    /**
+     * Excursus on shared maps
+     */
+    const exampleMap = group.shareMap('example-array');
+    
+    // Append a change listener to the map
+    exampleMap.on('change', (e) => {
+        console.log('There has been a change on exampleMap: %o', e);
+    });
+
+    // Create new map entries
+    exampleMap.set('a', 1);
+    exampleMap.set('b', 2);
+    exampleMap.set('c', 3);
 })();
