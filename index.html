@@ -1,9 +1,25 @@
 <!doctype html>
 <html>
     <head>
-
+        <meta charset="utf-8">
+        <title>Cloudless live coding</title>
+        <meta name="description" content="This is a test and demo page/app for Cloudless live coding.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="manifest" href="site.webmanifest"> -->
+        <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+        <!-- <link rel="stylesheet" href="css/main.css"> -->
     </head>
     <body>
+        <p>Hello world! This is your HTML5 entry point for your progressive web application.</p>
 
+        <label for="cloudless-rtsync">Real-time text sync</label>
+        <input type="text" id="cloudless-rtsync" placeholder="Enter text here" style="margin: 10px 0"/>
+        <br>
+        <label for="cloudless-dbsync">Database text sync</label>
+        <input type="text" id="cloudless-dbsync" placeholder="Enter text here" style="margin: 10px 0"/>
+        <br>
+        <button for="cloudless-dbsync" id="cloudless-dbsync-apply" style="margin: 10px 0">Save</button>
+
+        <script type="module" src="js/main.js"></script>
     </body>
 </html>
