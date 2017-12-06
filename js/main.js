@@ -25,4 +25,14 @@ const group = new Group({
 
 (async() => {
     await group.join();
+    
+    /**
+     * Section 1:
+     * Create a text field whose value will be shared with other user immediately.
+     */
+    // Get reference to the text field
+    const textField = document.querySelector('#cloudless-rtsync');
+    
+    // Register the text field for real time sync
+    group.shareHtmlElement(textField);
 })();
