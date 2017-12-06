@@ -22,3 +22,7 @@ const group = new Group({
         }
     }
 });
+
+(async() => {
+    await group.join();
+})();
